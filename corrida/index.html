@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Corrida Turbinada</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="cabecalho">
+      <div class="titulo">
+        <span class="titulo-icone">🏎️</span>
+        <div>
+          <h1>Corrida Turbinada</h1>
+          <p>Desvie do tráfego e vá o mais longe possível!</p>
+        </div>
+      </div>
+      <div class="acoes">
+        <button id="botao-pausar" class="botao botao-secundario" type="button">⏸️ Pausar</button>
+        <button id="botao-reiniciar" class="botao" type="button">🔄 Reiniciar</button>
+      </div>
+    </header>
+
+    <section class="painel" aria-label="Painel do jogo">
+      <div class="stat">
+        <span class="stat-valor" id="velocidade">0 km/h</span>
+        <span class="stat-label">Velocidade</span>
+      </div>
+      <div class="stat">
+        <span class="stat-valor" id="distancia">0 m</span>
+        <span class="stat-label">Distância</span>
+      </div>
+      <div class="stat">
+        <span class="stat-valor" id="vidas">❤️❤️❤️</span>
+        <span class="stat-label">Vidas</span>
+      </div>
+      <div class="stat">
+        <span class="stat-valor" id="recorde">0 m</span>
+        <span class="stat-label">Recorde</span>
+      </div>
+    </section>
+
+    <div class="area-jogo">
+      <canvas id="jogo" width="900" height="600" aria-label="Pista de corrida com carros"></canvas>
+
+      <div id="overlay" class="overlay">
+        <div class="overlay-caixa" role="dialog" aria-modal="true" aria-labelledby="overlay-titulo">
+          <div id="overlay-emoji" class="overlay-emoji">🏁</div>
+          <h2 id="overlay-titulo">Corrida Turbinada</h2>
+          <p id="overlay-texto">
+            Use ← → ou A/D para mudar de faixa, ↑/W para acelerar e ↓/S para frear.<br>
+            Desvie dos outros carros. Boa sorte!
+          </p>
+          <button id="overlay-botao" class="botao" type="button">Começar corrida</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="controles-toque" aria-label="Controles de toque">
+      <button class="botao-toque" data-acao="esquerda" type="button" aria-label="Virar à esquerda">◀</button>
+      <button class="botao-toque" data-acao="frear" type="button" aria-label="Frear">▼</button>
+      <button class="botao-toque" data-acao="acelerar" type="button" aria-label="Acelerar">▲</button>
+      <button class="botao-toque" data-acao="direita" type="button" aria-label="Virar à direita">▶</button>
+    </div>
+
+    <p class="dica">Dica: a pausa também funciona com a tecla <strong>P</strong> ou <strong>Esc</strong>.</p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

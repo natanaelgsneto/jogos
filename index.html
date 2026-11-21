@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo da Memória</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="cabecalho">
+      <div class="titulo">
+        <span class="titulo-icone">🧠</span>
+        <div>
+          <h1>Jogo da Memória</h1>
+          <p>Encontre todos os pares!</p>
+        </div>
+      </div>
+
+      <div class="controles">
+        <label class="campo">
+          <span>Dificuldade</span>
+          <select id="dificuldade">
+            <option value="facil">Fácil · 4×3</option>
+            <option value="medio" selected>Médio · 4×4</option>
+            <option value="dificil">Difícil · 6×4</option>
+          </select>
+        </label>
+        <button id="reiniciar" class="botao" type="button">
+          <span>🔄</span> Novo jogo
+        </button>
+      </div>
+    </header>
+
+    <section class="painel" aria-label="Estatísticas">
+      <div class="stat">
+        <span class="stat-valor" id="movimentos">0</span>
+        <span class="stat-label">Movimentos</span>
+      </div>
+      <div class="stat">
+        <span class="stat-valor" id="pares">0/8</span>
+        <span class="stat-label">Pares</span>
+      </div>
+      <div class="stat">
+        <span class="stat-valor" id="tempo">00:00</span>
+        <span class="stat-label">Tempo</span>
+      </div>
+    </section>
+
+    <section id="tabuleiro" class="tabuleiro" aria-label="Tabuleiro de cartas"></section>
+
+    <p class="dica">Clique em duas cartas para encontrar um par. ✅</p>
+  </main>
+
+  <div id="modal" class="modal" hidden>
+    <div class="modal-caixa" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
+      <div class="modal-emoji">🎉</div>
+      <h2 id="modal-titulo">Parabéns!</h2>
+      <p id="modal-texto">Você encontrou todos os pares.</p>
+      <button id="jogar-novamente" class="botao" type="button">Jogar novamente</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
